@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捐赠人列表</title>
+</head>
+<body>
+捐赠人列表：
+<ul>
+    {% for lender in lenders %}
+        <li><a href="/lenders/{{ lender.id}}">{{ lender.len_name }}</a></li>
+    {% empty %}
+        <li>暂无信息</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

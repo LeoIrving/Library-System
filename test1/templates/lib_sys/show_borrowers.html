@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>借阅人列表</title>
+</head>
+<body>
+借阅人列表：
+<ul>
+    {% for borrower in borrowers %}
+        <li><a href="/borrowers/{{ borrower.id}}">{{ borrower.bor_name }}</a></li>
+    {% empty %}
+        <li>暂无信息</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捐赠书籍</title>
+</head>
+<body>
+<h1>{{ lender.len_name }}</h1>
+捐赠书籍如下：<br/>
+<ul>
+    {% for book in books %}
+        <li><a href="/books/{{ book.id}}">{{ book.btitle }}</a></li>
+    {% empty %}
+        <li>暂无信息</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

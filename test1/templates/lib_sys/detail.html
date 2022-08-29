@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息</title>
+</head>
+<body>
+<h1>{{ book.btitle }}</h1>
+图书信息如下：
+<p>作者： <a href="/authors/{{ book.bauthor.id}}">{{ book.bauthor }}</a><br>
+出版日期： {{ book.bpub_date }}<br>
+出版商： {{ book.bpub_name }}<br> 
+入馆日期： {{ book.len_date }}<br> 
+捐赠人： <a href="/lenders/{{ book.lender.id}}">{{ book.lender }}</a></p>
+
+<ul>
+    {% if book.is_bor == True %}
+        <p>借阅人： <a href="/borrowers/{{ book.borrower.id}}">{{ book.borrower }}</a><br>
+        借阅日期： {{ book.bor_date }}</p>
+    {% endif %}
+</ul>
+</body>
+</html>

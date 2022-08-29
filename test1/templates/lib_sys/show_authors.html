@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作者列表</title>
+</head>
+<body>
+作者列表：
+<ul>
+    {% for author in authors %}
+        <li><a href="/authors/{{ author.id}}">{{ author.aut_name }}</a></li>
+    {% empty %}
+        <li>暂无信息</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
